@@ -57,6 +57,59 @@
   text-transform: uppercase;
 }
 
-.middle-container {
+.middle-container-fluid {
   background-color: #f1f5f8;
+}
+
+.card-title {
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.card-title span {
+  color: #ab7a5f;
+  font-size: 18px;
+}
+
+.card-img-top {
+  height: 225px;
+  object-fit: cover;
+}
+
+.bottom-container {
+  background: #eaded7;
+}
+
+.custom-title {
+  color: #453227;
+}
+
+.bottom-container-text {
+  color: #795744;
+}
+
+.custom-title {
+  width: 250px;
+}
+
+.card-title {
+  color: #453227;
+}
+
+.card-services {
+  background-color: #c5a491;
+  width: 300px;
+}
+
+.col {
+  width: 400px;
+}
+
+.email-input {
+  width: 300px;
+}
+
+.submit-btn {
+  background-color: #ab7a5f;
+  color: black;
 }

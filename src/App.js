@@ -9,7 +9,7 @@ import HeaderNavigation from "./components/HeaderNavigation";
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <HeaderNavigation />
       <Router>
         <div>
