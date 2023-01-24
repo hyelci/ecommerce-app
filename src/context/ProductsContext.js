@@ -17,6 +17,9 @@ import {
   PRICE_FILTER,
   CLEAR_FILTER,
   ADD_TO_CART,
+  INCREASE_AMOUNT,
+  DECREASE_AMOUNT,
+  DELETE_ITEM,
 } from "../action";
 
 const initialState = {
@@ -104,6 +107,18 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
+  const increaseAmount = (id) => {
+    dispatch({ type: INCREASE_AMOUNT, payload: id });
+  };
+
+  const decreaseAmount = (id) => {
+    dispatch({ type: DECREASE_AMOUNT, payload: id });
+  };
+
+  const deleteItem = (id) => {
+    dispatch({ type: DELETE_ITEM, payload: id });
+  };
+
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -121,6 +136,9 @@ export const ProductsProvider = ({ children }) => {
         clearFilter,
         fetchSingleProduct,
         addToCart,
+        increaseAmount,
+        decreaseAmount,
+        deleteItem,
       }}
     >
       {children}

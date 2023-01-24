@@ -13,6 +13,9 @@ import {
   PRICE_FILTER,
   CLEAR_FILTER,
   ADD_TO_CART,
+  INCREASE_AMOUNT,
+  DECREASE_AMOUNT,
+  DELETE_ITEM,
 } from "../action";
 
 const ProductsReducer = (state, action) => {
@@ -107,10 +110,53 @@ const ProductsReducer = (state, action) => {
     };
   }
 
-  if (action === ADD_TO_CART) {
+  if (action.type === DECREASE_AMOUNT) {
+    const cart = state.cart.map((item) => {
+      if (item.id === action.payload) {
+        return { ...item, amount: item.amount - 1 };
+      } else {
+        return item;
+      }
+    });
+    // let subtotal = 0;
+    // for (const item of cart) {
+    //   subtotal = subtotal + item.product.price * item.amount;
+    // }
     return {
       ...state,
-      cart: [...cart, { ...action.payload }],
+      cart,
+    };
+  }
+
+  if (action.type === INCREASE_AMOUNT) {
+    const cart = state.cart.map((item) => {
+      if (item.id === action.payload) {
+        return { ...item, amount: item.amount + 1 };
+      } else {
+        return item;
+      }
+    });
+    // let subtotal = 0;
+    // for (const item of cart) {
+    //   subtotal = subtotal + item.product.price * item.amount;
+    // }
+    return {
+      ...state,
+      cart,
+    };
+  }
+
+  if (action.type === DELETE_ITEM) {
+    const notDeletedItem = state.cart.filter(
+      (item) => item.id !== action.payload
+    );
+    return { ...state, cart: notDeletedItem };
+  }
+
+  if (action.type === ADD_TO_CART) {
+    return {
+      ...state,
+      cart: [...state.cart, { ...action.payload }],
     };
   }
 

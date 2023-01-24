@@ -194,3 +194,13 @@
   height: 30px;
   width: 50px;
 }
+
+.cart-img {
+  height: 100px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.cart-title {
+  color: #617d98;
+}

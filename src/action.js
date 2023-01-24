@@ -12,3 +12,6 @@ export const COLOR_FILTER = "COLOR_FILTER";
 export const PRICE_FILTER = "PRICE_FILTER";
 export const CLEAR_FILTER = "CLEAR_FILTER";
 export const ADD_TO_CART = "ADD_TO_CART";
+export const INCREASE_AMOUNT = "INCREASE_AMOUNT";
+export const DECREASE_AMOUNT = "DECREASE_AMOUNT";
+export const DELETE_ITEM = "DELETE_ITEM";

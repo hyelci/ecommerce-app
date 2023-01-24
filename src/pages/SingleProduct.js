@@ -17,7 +17,6 @@ const SingleProduct = () => {
     singleProduct,
     singleProductLoading: loading,
     addToCart,
-    product,
   } = useProductsContext();
 
   useEffect(() => {
@@ -56,6 +55,9 @@ const SingleProduct = () => {
   return (
     <div className="">
       <PageHeader title={name} />
+      <Link className="m-5 mt-3" to={"/products"}>
+        <button className="btn">Back to Products</button>
+      </Link>
       <div className="row m-5 pb-5">
         <div className="col-6">
           <SingleProductImages />
@@ -96,14 +98,20 @@ const SingleProduct = () => {
             <h2>{amount}</h2>
             <h2 onClick={increaseAmount}>+</h2>
           </div>
+
           <button
             className="btn ml-5"
-            onClick={() => addToCart({ product, amount: amount, color: color })}
+            onClick={() =>
+              addToCart({
+                product: singleProduct,
+                amount: amount,
+                color: color,
+              })
+            }
           >
             ADD TO CART
           </button>
         </div>
-        {/* <Link to={"/"}>Back to Products</Link> */}
       </div>
     </div>
   );

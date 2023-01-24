@@ -27,15 +27,15 @@ export default function HeaderNavigation() {
                 Home
               </a>
 
-              <a className="nav-link" href="/about">
+              <Link to={"/about"} className="nav-link">
                 About
-              </a>
-              <a className="nav-link" href="/products">
+              </Link>
+              <Link to={"/products"} className="nav-link">
                 Products
-              </a>
-              <a className="nav-link" href="/cart">
+              </Link>
+              <Link to={"/cart"} className="nav-link">
                 Cart
-              </a>
+              </Link>
             </div>
           </div>
         </div>
