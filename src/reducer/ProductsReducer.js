@@ -154,10 +154,26 @@ const ProductsReducer = (state, action) => {
   }
 
   if (action.type === ADD_TO_CART) {
-    return {
-      ...state,
-      cart: [...state.cart, { ...action.payload }],
-    };
+    const existingItem = state.cart.find(
+      (item) => item.id === action.payload.id
+    );
+    if (existingItem) {
+      return {
+        ...state,
+        cart: state.cart.map((item) => {
+          if (existingItem.id === action.payload.id) {
+            return { ...item, amount: item.amount + 1 };
+          } else {
+            return item;
+          }
+        }),
+      };
+    } else {
+      return {
+        ...state,
+        cart: [...state.cart, { ...action.payload }],
+      };
+    }
   }
 
   throw new Error(`No Matching "${action.type}" - action type`);

@@ -106,6 +106,7 @@ const SingleProduct = () => {
                 product: singleProduct,
                 amount: amount,
                 color: color,
+                id: singleProduct.id + color,
               })
             }
           >

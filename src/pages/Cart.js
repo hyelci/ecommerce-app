@@ -8,9 +8,32 @@ export default function Cart() {
     <div>
       <PageHeader title="Cart" />
 
-      {cart.map((item) => {
-        return <CartItem key={item.product.id} {...item} />;
-      })}
+      <div className="container">
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col" className="cart-title">
+                Item
+              </th>
+              <th scope="col" className="cart-title">
+                Price
+              </th>
+              <th scope="col" className="cart-title">
+                Quantity
+              </th>
+              <th scope="col" className="cart-title">
+                Subtotal
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {cart.map((item) => {
+              return <CartItem key={item.id} {...item} />;
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
