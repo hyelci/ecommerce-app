@@ -22,8 +22,8 @@ export default function HeaderNavigation() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-              <a className="nav-link active" aria-current="page" href="#">
+            <div className="navbar-nav flex justify-center">
+              <a className="nav-link active" aria-current="page" href="/">
                 Home
               </a>
 
@@ -32,6 +32,9 @@ export default function HeaderNavigation() {
               </a>
               <a className="nav-link" href="/products">
                 Products
+              </a>
+              <a className="nav-link" href="/cart">
+                Cart
               </a>
             </div>
           </div>

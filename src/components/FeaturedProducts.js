@@ -9,8 +9,8 @@ export default function FeaturedProducts() {
 
   return (
     <div>
-      <div className="row">
-        <div className="col m-5 align-self-center">
+      <div className="row m-5">
+        <div className="col justify-content-around m-5">
           <h1>Design Your Comfort Zone</h1>
           <p className="home-text mt-2">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
@@ -22,7 +22,7 @@ export default function FeaturedProducts() {
             <button className="btn mt-5">Shop Now</button>
           </Link>
         </div>
-        <div className="col">
+        <div className="col justify-content-around">
           <img src={heroBcg} className="img-hero  m-5" alt="" />
         </div>
       </div>

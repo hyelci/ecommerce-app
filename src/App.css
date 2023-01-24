@@ -113,3 +113,84 @@
   background-color: #ab7a5f;
   color: black;
 }
+
+.pageheader-container {
+  background-color: #eaded7;
+  height: 200px;
+}
+
+.about-img {
+  width: 500px;
+}
+
+.about-text {
+  color: #617d98;
+  line-height: 2;
+}
+
+.footer {
+  background-color: black;
+  height: 100px;
+}
+
+.footer h5 {
+  color: white;
+  letter-spacing: 1.5px;
+}
+
+.footer-text {
+  color: #ab7a5f;
+}
+
+.products-img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4%;
+}
+
+.product-price {
+  color: #ab7a5f;
+}
+
+.category-btn {
+  color: #617d98;
+}
+
+.img-btn {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.price-slider {
+  width: 200px;
+}
+
+.mainImg {
+  width: 500px;
+  height: 400px;
+}
+.singleProductPrice {
+  color: #ab7a5f;
+}
+
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 350px;
+}
+
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
+.amount-btn {
+  height: 30px;
+  width: 50px;
+}
