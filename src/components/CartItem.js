@@ -23,7 +23,7 @@ export default function CartItem({ product, amount, color, id }) {
       <td>
         <div className="amount-btn font-weight-bold">
           <span onClick={() => decreaseAmount(id)}> - </span>
-          <span cla>{amount}</span>
+          <span>{amount}</span>
           <span onClick={() => increaseAmount(id)}> + </span>
         </div>
       </td>

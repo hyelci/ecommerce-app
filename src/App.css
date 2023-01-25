@@ -209,5 +209,13 @@
   color: #ab7a5f;
 }
 
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .cart-total {
+  width: 400px;
 }

@@ -20,6 +20,7 @@ import {
   INCREASE_AMOUNT,
   DECREASE_AMOUNT,
   DELETE_ITEM,
+  CART_TOTAL,
 } from "../action";
 
 const initialState = {
@@ -34,7 +35,7 @@ const initialState = {
   visibleProducts: [],
   amount: 0,
   price: 0,
-  subtotal: 0,
+  orderTotal: 0,
   cart: [],
   filters: {
     company: "all",
@@ -105,18 +106,30 @@ export const ProductsProvider = ({ children }) => {
       type: ADD_TO_CART,
       payload: itemsDetails,
     });
+    dispatch({
+      type: CART_TOTAL,
+    });
   };
 
   const increaseAmount = (id) => {
     dispatch({ type: INCREASE_AMOUNT, payload: id });
+    dispatch({
+      type: CART_TOTAL,
+    });
   };
 
   const decreaseAmount = (id) => {
     dispatch({ type: DECREASE_AMOUNT, payload: id });
+    dispatch({
+      type: CART_TOTAL,
+    });
   };
 
   const deleteItem = (id) => {
     dispatch({ type: DELETE_ITEM, payload: id });
+    dispatch({
+      type: CART_TOTAL,
+    });
   };
 
   useEffect(() => {

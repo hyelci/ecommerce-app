@@ -16,6 +16,7 @@ import {
   INCREASE_AMOUNT,
   DECREASE_AMOUNT,
   DELETE_ITEM,
+  CART_TOTAL,
 } from "../action";
 
 const ProductsReducer = (state, action) => {
@@ -112,16 +113,13 @@ const ProductsReducer = (state, action) => {
 
   if (action.type === DECREASE_AMOUNT) {
     const cart = state.cart.map((item) => {
-      if (item.id === action.payload) {
+      if (item.id === action.payload && item.amount > 1) {
         return { ...item, amount: item.amount - 1 };
       } else {
         return item;
       }
     });
-    // let subtotal = 0;
-    // for (const item of cart) {
-    //   subtotal = subtotal + item.product.price * item.amount;
-    // }
+
     return {
       ...state,
       cart,
@@ -130,20 +128,25 @@ const ProductsReducer = (state, action) => {
 
   if (action.type === INCREASE_AMOUNT) {
     const cart = state.cart.map((item) => {
-      if (item.id === action.payload) {
+      if (item.id === action.payload && item.amount < item.product.stock) {
         return { ...item, amount: item.amount + 1 };
       } else {
         return item;
       }
     });
-    // let subtotal = 0;
-    // for (const item of cart) {
-    //   subtotal = subtotal + item.product.price * item.amount;
-    // }
+
     return {
       ...state,
       cart,
     };
+  }
+
+  if (action.type === CART_TOTAL) {
+    let orderTotal = 0;
+    for (const item of state.cart) {
+      orderTotal = orderTotal + item.product.price * item.amount;
+    }
+    return { ...state, orderTotal };
   }
 
   if (action.type === DELETE_ITEM) {

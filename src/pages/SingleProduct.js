@@ -55,8 +55,8 @@ const SingleProduct = () => {
   return (
     <div className="">
       <PageHeader title={name} />
-      <Link className="m-5 mt-3" to={"/products"}>
-        <button className="btn">Back to Products</button>
+      <Link className="m-5 " to={"/products"}>
+        <button className="btn mt-3">Back to Products</button>
       </Link>
       <div className="row m-5 pb-5">
         <div className="col-6">
@@ -99,7 +99,8 @@ const SingleProduct = () => {
             <h2 onClick={increaseAmount}>+</h2>
           </div>
 
-          <button
+          <Link
+            to="/cart"
             className="btn ml-5"
             onClick={() =>
               addToCart({
@@ -111,7 +112,7 @@ const SingleProduct = () => {
             }
           >
             ADD TO CART
-          </button>
+          </Link>
         </div>
       </div>
     </div>
