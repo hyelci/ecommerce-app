@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.svg";
 import heroBcg from "../assets/hero-bcg.jpeg";
 import Product from "./Product";
 import { useProductsContext } from "../context/ProductsContext";

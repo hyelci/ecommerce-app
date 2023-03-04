@@ -21,11 +21,10 @@ const SingleProduct = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${SingleURL}${id}`);
-  }, []);
+  }, [fetchSingleProduct, id]);
 
   const {
     price,
-    images,
     name,
     description,
     stock,
@@ -43,7 +42,7 @@ const SingleProduct = () => {
 
   const increaseAmount = () => {
     if (amount === stock) {
-      return (amount = stock);
+      return;
     }
     return setAmount(amount + 1);
   };

@@ -1,11 +1,9 @@
-import { PRICE_FILTER } from "../action";
 import { useProductsContext } from "../context/ProductsContext";
 
 export default function Filters() {
   const {
     handleSearch,
     query,
-    fetchProducts,
     handleFilter,
     categoryFilter,
     companyFilter,

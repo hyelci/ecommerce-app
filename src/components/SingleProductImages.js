@@ -14,6 +14,7 @@ export default function SingleProductImages() {
         src={images[index].thumbnails.large.url}
         width="90"
         className="px-2"
+        alt=""
       />
     </div>
   );
